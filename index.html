@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NexoU | Plataforma Universitaria</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="Styles/styles.css">
+  <link rel="stylesheet" href="Styles/styles_login.css">
+  <link rel="stylesheet" href="Styles/styles_conocer.css">
+  <link rel="stylesheet" href="Styles/styles_descubrir.css">
+  <link rel="stylesheet" href="Styles/styles_chats.css">
+  <link rel="stylesheet" href="Styles/styles_perfil.css">
+  <link rel="stylesheet" href="Styles/styles_eventos.css">
+
+  <!-- Scripts -->
+  <script src="Scripts/scripts_login_y_signup.js" defer></script>
+  <script src="Scripts/scripts_conocer_gente.js" defer></script>
+  <script src="Scripts/scripts_perfil_eventos_y_navegacion.js" defer></script>
+  <script src="Scripts/scripts_chats.js" defer></script>
+  <script src="Scripts/scripts_descubrir.js" defer></script>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5"/></g></symbol>
+    <symbol id="i-send" viewBox="0 0 24 24"><path d="M3 11.5L21 3l-8.5 18-2.2-7.3z" fill="currentColor"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M6 12.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  </svg>
+
+  <!-- PANTALLA DE INICIO DE SESIÓN -->
+  <section class="auth-screen" id="screen-auth">
+    <main class="auth-card">
+      <div class="auth-visual">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+             alt="Estudiantes universitarios en NexoU"
+             onerror="this.onerror=null;this.src='Assets/login-hero.svg'">
+      </div>
+
+      <div class="auth-panel">
+        <h1 class="auth-title">Welcome to NexoU.</h1>
+
+        <div class="auth-tabs" role="tablist">
+          <button type="button" class="auth-tab is-active" id="tab-login" role="tab" aria-selected="true">Login</button>
+          <button type="button" class="auth-tab" id="tab-signup" role="tab" aria-selected="false">SignUp</button>
+        </div>
+
+        <form id="auth-form" class="auth-form" novalidate>
+          <div class="auth-field">
+            <input id="auth-email" type="email" placeholder="Enter your email" required autocomplete="email">
+          </div>
+
+          <div class="auth-field auth-field--password">
+            <input id="auth-password" type="password" placeholder="Enter Password" required autocomplete="current-password">
+            <button type="button" class="auth-eye" id="toggle-password" aria-label="Mostrar u ocultar contraseña">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94"/>
+                <path d="M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19"/>
+                <line x1="1" y1="1" x2="23" y2="23"/>
+              </svg>
+            </button>
+          </div>
+
+          <a href="#" class="auth-forgot" id="forgot-link">Forgot password?</a>
+          <p class="auth-feedback" id="auth-feedback" hidden></p>
+
+          <button type="submit" class="auth-submit" id="auth-submit-btn">LOGIN</button>
+        </form>
+
+        <div class="auth-divider"><span>or</span></div>
+
+        <div class="auth-socials">
+          <button type="button" class="auth-social-btn" data-provider="Google" aria-label="Continuar con Google">
+            <svg width="20" height="20" viewBox="0 0 24 24">
+              <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.6l3.1-3.1C17.3 1.7 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+              <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+              <path fill="#FBBC05" d="M5.3 14.8c-.2-.7-.4-1.5-.4-2.3s.2-1.6.4-2.3L1.6 7.4C.6 9.4 0 11.6 0 14s.6 4.6 1.6 6.6l3.7-2.8z"/>
+              <path fill="#34A853" d="M12 24c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 21.4 7.4 24 12 24z"/>
+            </svg>
+          </button>
+
+          <button type="button" class="auth-social-btn" data-provider="Facebook" aria-label="Continuar con Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2">
+              <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07c0 6.02 4.39 11.01 10.13 11.93v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.96h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.08 24 18.09 24 12.07z"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </main>
+  </section>
+
+  <!-- NexoU -->
+  <div class="nx-app" id="screen-app" hidden>
+    <!-- Barra superior -->
+    <header class="nx-topbar">
+      <a class="nx-brand" href="#" id="nx-brand-home" aria-label="NexoU">
+        <span>Nexo</span><span class="nx-brand-accent">U</span>
+      </a>
+
+      <label class="nx-search" for="nx-search-input">
+        <img src="Assets/icon-search.svg" alt="" class="nx-search-icon">
+        <input id="nx-search-input" type="search" placeholder="Search..." autocomplete="off">
+      </label>
+
+      <div class="nx-topbar-actions">
+        <button class="nx-button nx-button-primary" id="nx-open-create" type="button">+ Crear evento</button>
+
+        <div class="nx-user" id="nx-user-menu-wrapper">
+          <button type="button" class="nx-user-trigger" id="nx-user-menu-btn" aria-haspopup="true" aria-expanded="false">
+            <span class="nx-user-avatar">
+              <img src="Assets/profile-circle.svg" alt="">
+            </span>
+            <span id="nx-header-username">Brayan Espinoza</span>
+            <svg class="nx-user-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+
+          <div class="nx-user-dropdown" id="nx-user-dropdown" role="menu" hidden>
+            <div class="nx-dropdown-header">
+              <strong id="nx-dropdown-username">Brayan Espinoza</strong>
+              <span>Ingeniería de Software · UPC</span>
+            </div>
+            <button type="button" class="nx-dropdown-item" data-dropdown-action="perfil" role="menuitem">
+              <img src="Assets/icon-person.svg" alt="">
+              <span>Mi Perfil</span>
+            </button>
+            <button type="button" class="nx-dropdown-item" data-dropdown-action="eventos" role="menuitem">
+              <img src="Assets/icon-list.svg" alt="">
+              <span>Mis Eventos</span>
+            </button>
+            <button type="button" class="nx-dropdown-item" data-dropdown-action="settings" role="menuitem">
+              <img src="Assets/icon-settings.svg" alt="">
+              <span>Configuración</span>
+            </button>
+            <button type="button" class="nx-dropdown-item nx-dropdown-item--danger" data-dropdown-action="logout" role="menuitem">
+              <img src="Assets/icon-logout.svg" alt="">
+              <span>Cerrar Sesión</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu lateral -->
+    <aside class="nx-sidebar">
+      <div class="nx-sidebar-banner" aria-hidden="true"></div>
+
+      <nav class="nx-navigation" aria-label="Navegación principal">
+        <a class="nx-nav-link" href="#" data-module="conocer">
+          <img src="Assets/icon-friends.svg" alt="">
+          <span>Conocer Gente</span>
+        </a>
+        <a class="nx-nav-link nx-nav-link-active" href="#" data-module="descubrir" aria-current="page">
+          <img src="Assets/icon-home.svg" alt="">
+          <span>Descubrir</span>
+        </a>
+        <a class="nx-nav-link" href="#" data-module="eventos">
+          <img src="Assets/icon-list.svg" alt="">
+          <span>Eventos</span>
+        </a>
+        <a class="nx-nav-link" href="#" data-module="chats">
+          <img src="Assets/icon-chat.svg" alt="">
+          <span>Chats</span>
+        </a>
+        <a class="nx-nav-link" href="#" data-module="perfil">
+          <img src="Assets/icon-person.svg" alt="">
+          <span>Perfil</span>
+        </a>
+      </nav>
+
+      <section class="nx-friends">
+        <h2>FRIENDS</h2>
+        <ul id="nx-sidebar-friends">
+          <li><img src="Assets/friend-avatar.svg" alt=""><span>Italo Cardenas</span></li>
+          <li><img src="Assets/friend-avatar.svg" alt=""><span>Diego Luna</span></li>
+          <li><img src="Assets/friend-avatar.svg" alt=""><span>Williams Ascanoa</span></li>
+          <li><img src="Assets/friend-avatar.svg" alt=""><span>Joaquín Sánchez</span></li>
+          <li><img src="Assets/friend-avatar.svg" alt=""><span>Hyogo</span></li>
+        </ul>
+      </section>
+
+      <section class="nx-settings">
+        <h2>SETTINGS</h2>
+        <a href="#" class="nx-nav-link" id="nx-sidebar-settings">
+          <img src="Assets/icon-settings.svg" alt="">
+          <span>Settings</span>
+        </a>
+        <a href="#" class="nx-nav-link nx-logout" id="nx-logout-btn">
+          <img src="Assets/icon-logout.svg" alt="">
+          <span>Logout</span>
+        </a>
+      </section>
+    </aside>
+
+    <!-- CONOCER GENTE -->
+    <main class="nx-content" id="module-conocer" hidden>
+      <section class="nx-hero-banner" aria-labelledby="nxHeroTitle">
+        <h1 id="nxHeroTitle" class="nx-hero-banner__title">
+          Conecta con compañeros de tu universidad
+        </h1>
+        <p class="nx-hero-banner__subtitle">con tus mismos intereses</p>
+      </section>
+
+      <div id="nxEmptyState" class="nx-empty-state" hidden>
+        <p>No encontramos resultados. Prueba quitando algún filtro o buscando otro interés.</p>
+        <button type="button" id="nxClearSearchBtn" class="nx-btn-connect">Quitar filtros</button>
+      </div>
+
+      <section class="nx-cards-grid" id="nxCardsGrid" aria-label="Estudiantes recomendados">
+        <article class="nx-person-card" data-search="italo cardenas ing. sistemas phyton python futbol hackathon">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Italo Cardenas"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Italo Cardenas</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Ing. Sistemas</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Buscando compañeros para armar un equipo de Hackathon y proyectos en Python
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Phyton</span>
+              <span class="nx-tag">Futbol</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Italo Cardenas">
+              Conectar
+            </button>
+          </div>
+        </article>
+
+        <article class="nx-person-card" data-search="vergy broncano ing. industrial series musica eventos">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Vergy Broncano"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/organizer-vb.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Vergy Broncano</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Ing. Industrial</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Buscando compañeros para ir y organizar eventos juntos dentro de la universidad
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Series</span>
+              <span class="nx-tag">Musica</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Vergy Broncano">
+              Conectar
+            </button>
+          </div>
+        </article>
+
+        <article class="nx-person-card" data-search="fernanda olivares ing. sistemas extrovertida musica amigos">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Fernanda Olivares"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Fernanda Olivares</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Ing. Sistemas</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Busco salir con amigos a divertirnos juntos y pasarla bien entre nosotros
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Extrovertida</span>
+              <span class="nx-tag">Musica</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Fernanda Olivares">
+              Conectar
+            </button>
+          </div>
+        </article>
+
+        <article class="nx-person-card" data-search="andrea flores administracion naturaleza musica">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Andrea Flores"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Andrea Flores</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Administracion</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Holaaa soy una persona libre, amante de la naturaleza y de las buenas vibras. Me gusta vivir sin prejuicios
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Naturaleza</span>
+              <span class="nx-tag">Musica</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Andrea Flores">
+              Conectar
+            </button>
+          </div>
+        </article>
+
+        <article class="nx-person-card" data-search="pedro torre ing. sistemas musica videojuegos">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Pedro Torre"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Pedro Torre</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Ing. Sistemas</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Holaaa unas chelitas para olvidar que tengo 5 cursos jalados.
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Musica</span>
+              <span class="nx-tag">Juegos</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Pedro Torre">
+              Conectar
+            </button>
+          </div>
+        </article>
+
+        <article class="nx-person-card" data-search="jose campos negocios int. rock musica">
+          <div class="nx-person-card__header">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format&fit=crop&q=80"
+              alt="Foto de perfil de Jose Campos"
+              class="nx-person-card__avatar"
+              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+            />
+            <div class="nx-person-card__meta">
+              <div class="nx-person-card__name-row">
+                <h3 class="nx-person-card__name">Jose Campos</h3>
+                <span class="nx-verified-badge" title="Estudiante verificado UPC" aria-label="Estudiante verificado">
+                  <svg viewBox="0 0 24 24" fill="currentColor">
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M8.5 12.5L10.8 14.8L15.5 9.8" stroke="#FFFFFF" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+              </div>
+              <p class="nx-person-card__career">Negocios Int.</p>
+            </div>
+          </div>
+
+          <p class="nx-person-card__bio">
+            Qué tranza, gente... Me gusta la ropa negra, escuchar rock, conversar y armar planes en el campus.
+          </p>
+
+          <hr class="nx-person-card__divider" />
+
+          <div class="nx-person-card__footer">
+            <div class="nx-tags">
+              <span class="nx-tag">Rock</span>
+              <span class="nx-tag">Musica</span>
+            </div>
+            <button type="button" class="nx-btn-connect" data-user="Jose Campos">
+              Conectar
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- DESCUBRIR -->
+    <main class="nx-content" id="module-descubrir">
+      <section class="nx-page-heading">
+        <h1>Descubre eventos</h1>
+        <p>con tus mismos intereses</p>
+      </section>
+
+      <section class="nx-events-list" id="nx-events-list" aria-label="Eventos recomendados">
+        <article class="nx-event-card"
+                 data-event-id="evt-vergy-1"
+                 data-event-title="Noche de Música en Vivo"
+                 data-event-organizer="Vergy Broncano · Ing. Industrial"
+                 data-event-category="Música en vivo"
+                 data-event-when="Hoy 16:00 hrs · Rotonda"
+                 data-search="vergy broncano ing industrial musica en vivo rotonda evento">
+          <div class="nx-event-author">
+            <div class="nx-avatar nx-avatar-large">
+              <img src="https://images.unsplash.com/photo-1758598302784-42d00ce2ba8f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=60&amp;w=400"
+                   alt="Foto de perfil del organizador"
+                   onerror="this.onerror=null;this.src='Assets/organizer-vb.svg'">
+              <span>VB</span>
+            </div>
+            <div class="nx-author-details">
+              <strong>Vergy Broncano</strong>
+              <span>Ing. Industrial</span>
+            </div>
+            <img class="nx-verified" src="Assets/icon-verified.svg" alt="Cuenta verificada">
+          </div>
+
+          <p class="nx-event-description">
+            ¡Se viene un evento que no te puedes perder! Prepárate para disfrutar de buena música en vivo,
+            compartir con amigos y pasar una noche increíble junto a una banda que promete darlo todo en el
+            escenario. 🎤⚡🍻 ¡Junta a tu mancha y sé parte de esta experiencia! 🤘🖤
+          </p>
+
+          <div class="nx-event-cover">
+            <img src="https://images.pexels.com/photos/15736103/pexels-photo-15736103/free-photo-of-audience-and-band-on-stage-during-performance.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260"
+                 alt="Banda tocando música en vivo frente al público"
+                 onerror="this.onerror=null;this.src='Assets/event-cover.svg'">
+            <span class="nx-cover-fallback">Música en vivo · NexoU</span>
+          </div>
+
+          <div class="nx-event-meta">
+            <div>
+              <strong>Fecha</strong>
+              <span>Hoy 16:00 hrs</span>
+            </div>
+            <div>
+              <strong>Lugar</strong>
+              <span>Rotonda</span>
+            </div>
+            <div>
+              <strong>Asistentes</strong>
+              <span class="nx-attendee-count" data-count="18">18 confirmados</span>
+            </div>
+          </div>
+
+          <div class="nx-card-footer">
+            <button class="nx-button nx-button-primary nx-join-button" type="button">Unirse al evento</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- EVENTOS -->
+    <main class="nx-content" id="module-eventos" hidden>
+      <section class="nx-my-events-card">
+        <h1 class="nx-my-events-title">TUS PROXIMOS EVENTOS</h1>
+
+        <div class="nx-my-events-empty" id="nx-my-events-empty">
+          <p>Aqui apareceran los eventos a los que te uniste</p>
+        </div>
+
+        <div class="nx-joined-events-grid" id="nx-joined-events-list" hidden></div>
+      </section>
+    </main>
+
+    <!-- CHATS -->
+    <main class="nx-content nx-content--chats" id="module-chats" hidden>
+      <section class="panel" id="view-chats">
+        <div class="chat-list">
+          <h2 class="chat-list__title">CHATS</h2>
+          <ul id="chatList" class="chat-list__items"></ul>
+          <p class="chat-list__empty" id="chatEmpty" hidden>No hay chats con ese nombre.</p>
+        </div>
+
+        <div class="chat">
+          <div class="chat__head" id="chatHead"></div>
+          <div class="chat__body" id="chatBody" aria-live="polite"></div>
+          <form class="chat__form" id="chatForm" autocomplete="off">
+            <input id="chatInput" type="text" placeholder="Escribe un mensaje..." aria-label="Mensaje">
+            <button type="submit" aria-label="Enviar"><svg class="ico"><use href="#i-send"/></svg></button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- PERFIL -->
+    <main class="nx-content" id="module-perfil" hidden>
+      <section class="nx-profile-card">
+        <div class="nx-profile-avatar-xl">
+          <img src="Assets/profile-circle.svg" alt="Foto de perfil de Brayan Espinoza">
+        </div>
+
+        <h1 class="nx-profile-name" id="nx-profile-name">Brayan Espinoza</h1>
+        <p class="nx-profile-career" id="nx-profile-career">Ingeniera de Software</p>
+        <p class="nx-profile-university" id="nx-profile-university">Universidad Peruana De Ciencias Aplicada - UPC</p>
+
+        <p class="nx-profile-bio" id="nx-profile-bio">
+          Estudiante de Ingeniería de Software, apasionado por la programación y el
+          vóley. Me gusta crear cosas con código, aprender cosas nuevas y disfrutar de
+          buenos partidos. Siempre buscando nuevos retos dentro y fuera de la cancha.
+        </p>
+
+        <div class="nx-profile-divider" aria-hidden="true"></div>
+
+        <div class="nx-profile-stats">
+          <div class="nx-stat-item">
+            <span class="nx-stat-label">Eventos Creados</span>
+            <span class="nx-stat-value" id="nx-stat-created">0</span>
+          </div>
+          <div class="nx-stat-item">
+            <span class="nx-stat-label">Amigos</span>
+            <span class="nx-stat-value" id="nx-stat-friends">5</span>
+          </div>
+          <div class="nx-stat-item">
+            <span class="nx-stat-label">Asistencias</span>
+            <span class="nx-stat-value" id="nx-stat-attendances">0</span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Modal - Organizar evento universitario -->
+  <dialog class="nx-create-dialog" id="nx-create-dialog">
+    <form id="nx-create-form">
+      <div class="nx-dialog-heading">
+        <h2>Organizar evento universitario</h2>
+      </div>
+
+      <label class="nx-form-field">
+        <span>Título</span>
+        <input name="title" type="text" required maxlength="80">
+      </label>
+
+      <label class="nx-form-field">
+        <span>Descripcion</span>
+        <textarea name="description" rows="2" required maxlength="400"></textarea>
+      </label>
+
+      <label class="nx-form-field">
+        <span>Categoria</span>
+        <input name="category" type="text" required maxlength="50">
+      </label>
+
+      <label class="nx-form-field">
+        <span>Fecha y lugar</span>
+        <input name="datePlace" type="text" required maxlength="100" placeholder="Ej. Viernes 16:00 hrs · Rotonda">
+      </label>
+
+      <div class="nx-dialog-actions">
+        <button class="nx-button nx-button-primary" id="nx-cancel-create" type="button">Cancelar</button>
+        <button class="nx-button nx-button-primary" type="submit">Crear evento</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Modal - Configuracion de Perfil -->
+  <dialog class="nx-create-dialog" id="nx-settings-dialog">
+    <form id="nx-settings-form">
+      <div class="nx-dialog-heading">
+        <h2>Configuración de Perfil</h2>
+      </div>
+
+      <label class="nx-form-field">
+        <span>Nombre completo</span>
+        <input id="nx-set-name" type="text" required maxlength="60" value="Brayan Espinoza">
+      </label>
+
+      <label class="nx-form-field">
+        <span>Carrera</span>
+        <input id="nx-set-career" type="text" required maxlength="60" value="Ingeniera de Software">
+      </label>
+
+      <label class="nx-form-field">
+        <span>Universidad</span>
+        <input id="nx-set-uni" type="text" required maxlength="80" value="Universidad Peruana De Ciencias Aplicada - UPC">
+      </label>
+
+      <label class="nx-form-field">
+        <span>Biografía</span>
+        <textarea id="nx-set-bio" rows="3" required maxlength="260">Estudiante de Ingeniería de Software, apasionado por la programación y el vóley. Me gusta crear cosas con código, aprender cosas nuevas y disfrutar de buenos partidos. Siempre buscando nuevos retos dentro y fuera de la cancha.</textarea>
+      </label>
+
+      <div class="nx-dialog-actions">
+        <button class="nx-button nx-button-primary" id="nx-cancel-settings" type="button">Cancelar</button>
+        <button class="nx-button nx-button-primary" type="submit">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div class="nx-toast" id="nx-toast" role="status" aria-live="polite"></div>
+</body>
+</html>
