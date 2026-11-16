@@ -9,20 +9,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="Styles/styles.css">
-  <link rel="stylesheet" href="Styles/styles_login.css">
-  <link rel="stylesheet" href="Styles/styles_conocer.css">
-  <link rel="stylesheet" href="Styles/styles_descubrir.css">
-  <link rel="stylesheet" href="Styles/styles_chats.css">
-  <link rel="stylesheet" href="Styles/styles_perfil.css">
-  <link rel="stylesheet" href="Styles/styles_eventos.css">
+  <link rel="stylesheet" href="Assets/styles/styles.css">
+  <link rel="stylesheet" href="Assets/styles/styles_login.css">
+  <link rel="stylesheet" href="Assets/styles/styles_conocer.css">
+  <link rel="stylesheet" href="Assets/styles/styles_descubrir.css">
+  <link rel="stylesheet" href="Assets/styles/styles_chats.css">
+  <link rel="stylesheet" href="Assets/styles/styles_perfil.css">
+  <link rel="stylesheet" href="Assets/styles/styles_eventos.css">
 
   <!-- Scripts -->
-  <script src="Scripts/scripts_login_y_signup.js" defer></script>
-  <script src="Scripts/scripts_conocer_gente.js" defer></script>
-  <script src="Scripts/scripts_perfil_eventos_y_navegacion.js" defer></script>
-  <script src="Scripts/scripts_chats.js" defer></script>
-  <script src="Scripts/scripts_descubrir.js" defer></script>
+  <script src="Assets/scripts/scripts_login_y_signup.js" defer></script>
+  <script src="Assets/scripts/scripts_conocer_gente.js" defer></script>
+  <script src="Assets/scripts/scripts_perfil_eventos_y_navegacion.js" defer></script>
+  <script src="Assets/scripts/scripts_chats.js" defer></script>
+  <script src="Assets/scripts/scripts_descubrir.js" defer></script>
 </head>
 <body>
 
@@ -38,7 +38,7 @@
       <div class="auth-visual">
         <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
              alt="Estudiantes universitarios en NexoU"
-             onerror="this.onerror=null;this.src='Assets/login-hero.svg'">
+             onerror="this.onerror=null;this.src='Assets/images/login-hero.svg'">
       </div>
 
       <div class="auth-panel">
@@ -102,7 +102,7 @@
       </a>
 
       <label class="nx-search" for="nx-search-input">
-        <img src="Assets/icon-search.svg" alt="" class="nx-search-icon">
+        <img src="Assets/images/icon-search.svg" alt="" class="nx-search-icon">
         <input id="nx-search-input" type="search" placeholder="Search..." autocomplete="off">
       </label>
 
@@ -112,7 +112,7 @@
         <div class="nx-user" id="nx-user-menu-wrapper">
           <button type="button" class="nx-user-trigger" id="nx-user-menu-btn" aria-haspopup="true" aria-expanded="false">
             <span class="nx-user-avatar">
-              <img src="Assets/profile-circle.svg" alt="">
+              <img src="Assets/images/profile-circle.svg" alt="">
             </span>
             <span id="nx-header-username">Brayan Espinoza</span>
             <svg class="nx-user-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -124,19 +124,19 @@
               <span>Ingeniería de Software · UPC</span>
             </div>
             <button type="button" class="nx-dropdown-item" data-dropdown-action="perfil" role="menuitem">
-              <img src="Assets/icon-person.svg" alt="">
+              <img src="Assets/images/icon-person.svg" alt="">
               <span>Mi Perfil</span>
             </button>
             <button type="button" class="nx-dropdown-item" data-dropdown-action="eventos" role="menuitem">
-              <img src="Assets/icon-list.svg" alt="">
+              <img src="Assets/images/icon-list.svg" alt="">
               <span>Mis Eventos</span>
             </button>
             <button type="button" class="nx-dropdown-item" data-dropdown-action="settings" role="menuitem">
-              <img src="Assets/icon-settings.svg" alt="">
+              <img src="Assets/images/icon-settings.svg" alt="">
               <span>Configuración</span>
             </button>
             <button type="button" class="nx-dropdown-item nx-dropdown-item--danger" data-dropdown-action="logout" role="menuitem">
-              <img src="Assets/icon-logout.svg" alt="">
+              <img src="Assets/images/icon-logout.svg" alt="">
               <span>Cerrar Sesión</span>
             </button>
           </div>
@@ -150,23 +150,23 @@
 
       <nav class="nx-navigation" aria-label="Navegación principal">
         <a class="nx-nav-link" href="#" data-module="conocer">
-          <img src="Assets/icon-friends.svg" alt="">
+          <img src="Assets/images/icon-friends.svg" alt="">
           <span>Conocer Gente</span>
         </a>
         <a class="nx-nav-link nx-nav-link-active" href="#" data-module="descubrir" aria-current="page">
-          <img src="Assets/icon-home.svg" alt="">
+          <img src="Assets/images/icon-home.svg" alt="">
           <span>Descubrir</span>
         </a>
         <a class="nx-nav-link" href="#" data-module="eventos">
-          <img src="Assets/icon-list.svg" alt="">
+          <img src="Assets/images/icon-list.svg" alt="">
           <span>Eventos</span>
         </a>
         <a class="nx-nav-link" href="#" data-module="chats">
-          <img src="Assets/icon-chat.svg" alt="">
+          <img src="Assets/images/icon-chat.svg" alt="">
           <span>Chats</span>
         </a>
         <a class="nx-nav-link" href="#" data-module="perfil">
-          <img src="Assets/icon-person.svg" alt="">
+          <img src="Assets/images/icon-person.svg" alt="">
           <span>Perfil</span>
         </a>
       </nav>
@@ -174,22 +174,22 @@
       <section class="nx-friends">
         <h2>FRIENDS</h2>
         <ul id="nx-sidebar-friends">
-          <li><img src="Assets/friend-avatar.svg" alt=""><span>Italo Cardenas</span></li>
-          <li><img src="Assets/friend-avatar.svg" alt=""><span>Diego Luna</span></li>
-          <li><img src="Assets/friend-avatar.svg" alt=""><span>Williams Ascanoa</span></li>
-          <li><img src="Assets/friend-avatar.svg" alt=""><span>Joaquín Sánchez</span></li>
-          <li><img src="Assets/friend-avatar.svg" alt=""><span>Hyogo</span></li>
+          <li><img src="Assets/images/friend-avatar.svg" alt=""><span>Italo Cardenas</span></li>
+          <li><img src="Assets/images/friend-avatar.svg" alt=""><span>Diego Luna</span></li>
+          <li><img src="Assets/images/friend-avatar.svg" alt=""><span>Williams Ascanoa</span></li>
+          <li><img src="Assets/images/friend-avatar.svg" alt=""><span>Joaquín Sánchez</span></li>
+          <li><img src="Assets/images/friend-avatar.svg" alt=""><span>Hyogo</span></li>
         </ul>
       </section>
 
       <section class="nx-settings">
         <h2>SETTINGS</h2>
         <a href="#" class="nx-nav-link" id="nx-sidebar-settings">
-          <img src="Assets/icon-settings.svg" alt="">
+          <img src="Assets/images/icon-settings.svg" alt="">
           <span>Settings</span>
         </a>
         <a href="#" class="nx-nav-link nx-logout" id="nx-logout-btn">
-          <img src="Assets/icon-logout.svg" alt="">
+          <img src="Assets/images/icon-logout.svg" alt="">
           <span>Logout</span>
         </a>
       </section>
@@ -216,7 +216,7 @@
               src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Italo Cardenas"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/friend-avatar.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -255,7 +255,7 @@
               src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Vergy Broncano"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/organizer-vb.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/organizer-vb.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -294,7 +294,7 @@
               src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Fernanda Olivares"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/friend-avatar.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -333,7 +333,7 @@
               src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Andrea Flores"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/friend-avatar.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -372,7 +372,7 @@
               src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Pedro Torre"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/friend-avatar.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -411,7 +411,7 @@
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=160&auto=format&fit=crop&q=80"
               alt="Foto de perfil de Jose Campos"
               class="nx-person-card__avatar"
-              onerror="this.onerror=null;this.src='Assets/friend-avatar.svg'"
+              onerror="this.onerror=null;this.src='Assets/images/friend-avatar.svg'"
             />
             <div class="nx-person-card__meta">
               <div class="nx-person-card__name-row">
@@ -465,14 +465,14 @@
             <div class="nx-avatar nx-avatar-large">
               <img src="https://images.unsplash.com/photo-1758598302784-42d00ce2ba8f?auto=format&amp;fit=crop&amp;fm=jpg&amp;q=60&amp;w=400"
                    alt="Foto de perfil del organizador"
-                   onerror="this.onerror=null;this.src='Assets/organizer-vb.svg'">
+                   onerror="this.onerror=null;this.src='Assets/images/organizer-vb.svg'">
               <span>VB</span>
             </div>
             <div class="nx-author-details">
               <strong>Vergy Broncano</strong>
               <span>Ing. Industrial</span>
             </div>
-            <img class="nx-verified" src="Assets/icon-verified.svg" alt="Cuenta verificada">
+            <img class="nx-verified" src="Assets/images/icon-verified.svg" alt="Cuenta verificada">
           </div>
 
           <p class="nx-event-description">
@@ -484,7 +484,7 @@
           <div class="nx-event-cover">
             <img src="https://images.pexels.com/photos/15736103/pexels-photo-15736103/free-photo-of-audience-and-band-on-stage-during-performance.jpeg?auto=compress&amp;dpr=1&amp;h=750&amp;w=1260"
                  alt="Banda tocando música en vivo frente al público"
-                 onerror="this.onerror=null;this.src='Assets/event-cover.svg'">
+                 onerror="this.onerror=null;this.src='Assets/images/event-cover.svg'">
             <span class="nx-cover-fallback">Música en vivo · NexoU</span>
           </div>
 
@@ -547,7 +547,7 @@
     <main class="nx-content" id="module-perfil" hidden>
       <section class="nx-profile-card">
         <div class="nx-profile-avatar-xl">
-          <img src="Assets/profile-circle.svg" alt="Foto de perfil de Brayan Espinoza">
+          <img src="Assets/images/profile-circle.svg" alt="Foto de perfil de Brayan Espinoza">
         </div>
 
         <h1 class="nx-profile-name" id="nx-profile-name">Brayan Espinoza</h1>
