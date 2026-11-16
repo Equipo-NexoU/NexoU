@@ -18,19 +18,21 @@ Prototipo frontend de una plataforma universitaria orientada a descubrir activid
 ## Estructura actual verificada
 
 ```text
-index.html
-Styles/
-  styles.css
-  styles_descubrir.css
-  styles_eventos.css
-  ...
-Scripts/
-  scripts_descubrir.js
-  scripts_perfil_eventos_y_navegacion.js
-  scripts_login_y_signup.js
-  ...
-Assets/
-  (imágenes e iconos)
+public/
+  index.html
+  assets/
+    images/
+    styles/
+      styles.css
+      styles_descubrir.css
+      styles_eventos.css
+      ...
+    scripts/
+      scripts_descubrir.js
+      scripts_perfil_eventos_y_navegacion.js
+      scripts_login_y_signup.js
+      ...
+README.md
 ```
 
 La navegación y los módulos de Descubrir, Eventos, Perfil, Conocer y Chats se agrupan en `index.html`. Los estilos y scripts se cargan mediante rutas relativas.
